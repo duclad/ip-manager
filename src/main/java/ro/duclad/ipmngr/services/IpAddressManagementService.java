@@ -44,7 +44,7 @@ public class IpAddressManagementService {
         }
         List<String> allocatedIpAddresses = new ArrayList<>();
         long numberOfIterations = Math.min(numberOfAddresses, ipPool.getUpperBound() - firstUnusedIpAddress);
-        for (long i = 0; i < numberOfIterations; i++) {
+        for (long i = 0; i <= numberOfIterations; i++) {
             IpAddress address = new IpAddress();
             address.setPool(ipPool);
             address.setState(IpAddressState.RESERVED);
@@ -91,6 +91,7 @@ public class IpAddressManagementService {
         return allocatedIpAddresses;
     }
 
+    @Transactional
     public void allocateStaticIpAddress(long poolId, String ipAddress, IpAddressState state) {
         IPAddressString ipAddressString = new IPAddressString(ipAddress);
         if (!ipAddressString.isIPAddress()) {
