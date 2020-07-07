@@ -1,0 +1,45 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <contextName>
+                    <fieldName>appName</fieldName>
+                </contextName>
+                <threadName>
+                    <fieldName>appThread</fieldName>
+                </threadName>
+                <timestamp>
+                    <fieldName>appTimestamp</fieldName>
+                    <timeZone>Europe/Stockholm</timeZone>
+                </timestamp>
+                <loggerName>
+                    <fieldName>appLogger</fieldName>
+                </loggerName>
+                <logLevel>
+                    <fieldName>appLogLevel</fieldName>
+                </logLevel>
+                <callerData>
+                    <classFieldName>callerClass</classFieldName>
+                    <methodFieldName>callerMethod</methodFieldName>
+                    <fileFieldName>callerFile</fileFieldName>
+                    <lineFieldName>callerLine</lineFieldName>
+                </callerData>
+                <mdc/>
+                <arguments>
+                    <includeNonStructuredArguments>false</includeNonStructuredArguments>
+                </arguments>
+                <stackTrace>
+                    <fieldName>stack</fieldName>
+                </stackTrace>
+                <message>
+                    <fieldName>msg</fieldName>
+                </message>
+            </providers>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

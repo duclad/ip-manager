@@ -9,8 +9,20 @@
         <insert tableName="IP_POOL">
             <column name="ID" value="1"/>
             <column name="DESCRIPTION" value="Static - IP Block 1"/>
-            <column name="LOWER_BOUND" value=""/>
-            <column name="UPPER_BOUND" value=""/>
+            <column name="LOWER_BOUND" value="281470854109697"/>
+            <column name="UPPER_BOUND" value="281470854109796"/>
+        </insert>
+        <insert tableName="IP_POOL">
+            <column name="ID" value="2"/>
+            <column name="DESCRIPTION" value="Static - IP Block 2"/>
+            <column name="LOWER_BOUND" value="281470854109440"/>
+            <column name="UPPER_BOUND" value="281470854109695"/>
+        </insert>
+        <insert tableName="IP_POOL">
+            <column name="ID" value="3"/>
+            <column name="DESCRIPTION" value="Dynamic - IP Block 1"/>
+            <column name="LOWER_BOUND" value="281470852792320"/>
+            <column name="UPPER_BOUND" value="281470852857855"/>
         </insert>
     </changeSet>
 
