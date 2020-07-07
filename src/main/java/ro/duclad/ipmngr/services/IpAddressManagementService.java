@@ -43,8 +43,8 @@ public class IpAddressManagementService {
             firstUnusedIpAddress = lastUsedAddress.get().getId() + 1;
         }
         List<String> allocatedIpAddresses = new ArrayList<>();
-        long numberOfIterations = Math.min(numberOfAddresses, ipPool.getUpperBound() - firstUnusedIpAddress);
-        for (long i = 0; i <= numberOfIterations; i++) {
+        long numberOfIterations = Math.min(numberOfAddresses, ipPool.getUpperBound() - firstUnusedIpAddress+1);
+        for (long i = 0; i < numberOfIterations; i++) {
             IpAddress address = new IpAddress();
             address.setPool(ipPool);
             address.setState(IpAddressState.RESERVED);
